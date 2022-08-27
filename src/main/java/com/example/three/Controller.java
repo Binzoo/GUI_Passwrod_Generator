@@ -2,21 +2,17 @@ package com.example.three;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.util.Random;
 
 public class Controller {
 
+    @FXML
+    private TextField textField;
 
     @FXML
-    Label label;
-    @FXML
-    TextField textField;
-
-    @FXML
-    TextField textPassword;
+    private TextField textPassword;
 
     public void generate(ActionEvent event) {
 
@@ -30,7 +26,7 @@ public class Controller {
         }
 
         StringBuilder store = new StringBuilder();
-        String numberOfCharacter = "";
+        String numberOfCharacter;
 
         for (int j = 0; true; ) {
             if (value >= 8 && value <= 30) {
@@ -52,7 +48,7 @@ public class Controller {
         }
     }
 
-    public static String randomInt() {
+    private static String randomInt() {
         Random rand = new Random();
         String alphabet = "1234567890";
         String store = "";
@@ -63,7 +59,7 @@ public class Controller {
     }
 
     // this method give random String
-    public static String randomString() {
+    private static String randomString() {
 
         Random rand = new Random();
         String alphabet = "abcdefghijklmnopqrstuvwxyxz";
@@ -74,7 +70,7 @@ public class Controller {
         return store;
     }
 
-    public static String randomCapitalString() {
+    private static String randomCapitalString() {
         Random rand = new Random();
         String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String store = "";
@@ -84,7 +80,7 @@ public class Controller {
         return store;
     }
 
-    public static String randomCharacter() {
+    private static String randomCharacter() {
         Random rand = new Random();
         String alphabet = "!@#$%^&*()_+{}::L><?~`±§";
         String store = "";
